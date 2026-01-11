@@ -23,7 +23,7 @@ Node* reverseList(Node* head) {
 }
 
 // Remove leading zeros
-Node* trimLeadingZeros(Node* head) {
+Node* LeadingZeros(Node* head) {
     while (head && head->data == 0)
         head = head->next;
 
@@ -31,7 +31,7 @@ Node* trimLeadingZeros(Node* head) {
 }
 
 // Build list from string number
-Node* buildListFromString(const string& s) {
+Node* ListFromString(const string& s) {
     Node* head = NULL;
     Node* tail = NULL;
 
@@ -49,8 +49,8 @@ Node* buildListFromString(const string& s) {
 
 // Add two numbers
 Node* addTwoLists(Node* num1, Node* num2) {
-    num1 = trimLeadingZeros(num1);
-    num2 = trimLeadingZeros(num2);
+    num1 = LeadingZeros(num1);
+    num2 = LeadingZeros(num2);
 
     num1 = reverseList(num1);
     num2 = reverseList(num2);
@@ -86,10 +86,10 @@ void printList(Node* head) {
 
 int main() {
     string s1, s2;
-    cin >> s1 >> s2;   // INPUT: 123 999
+    cin >> s1 >> s2;   // input the 2 numbers to be added
 
-    Node* num1 = buildListFromString(s1);
-    Node* num2 = buildListFromString(s2);
+    Node* num1 = ListFromString(s1);
+    Node* num2 = ListFromString(s2);
 
     Node* result = addTwoLists(num1, num2);
     printList(result);
